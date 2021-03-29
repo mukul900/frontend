@@ -1,0 +1,25 @@
+
+<div class="container">
+    <h2>Register</h2>
+    <form [formGroup]="user">
+      <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+      <label for="name">UserName</label>
+      <input type="text" id="name" formControlName="username" placeholder="Your name">
+      </div>
+      <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <label for="file">Upload Profile Image</label>
+        <input type="file" id="file" formControlName="image" (change)="loadFile($event)">
+      </div>
+      <input type="submit" routerLink="/auth/login" (click)="onSubmit()" value="Register">
+      <small>Already a User?</small>
+      <input type="submit" routerLink="/auth/login" value="Login"/>
+    </form>
+  </div>

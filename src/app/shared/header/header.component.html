@@ -1,0 +1,44 @@
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a href="/home/index" style="text-decoration: none; color: whitesmoke;">Nutritionist</a>
+   
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" (click)="routeToFavourites()" aria-label="Example icon-button with heart icon" data-toggle="tooltip" data-placement="bottom" title="View Favourites">
+      
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon profile-icon" (click)="profileClick()" aria-label="Example icon-button with account_circle icon" data-toggle="tooltip" data-placement="bottom" title="View profile">
+      
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <button (click)="onClick()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" data-toggle="tooltip" data-placement="top" title="{{loginStatus}}">
+      <mat-icon>{{loginStatus}}</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark mg-3">
+    <a class="navbar-brand" href="#">Nutritionist</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">View Favourites</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> -->

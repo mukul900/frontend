@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { min-height: 90vh;
+    /* height:100%;  */
+position: relative;
+/* padding-bottom: 65px; */} 
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.swiper-button-next, .swiper-button-prev{
+    color: #fff !important;
+}

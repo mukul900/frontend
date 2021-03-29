@@ -1,0 +1,66 @@
+<div >
+    <h2 style="text-align: center;">{{favMessage}}</h2>
+</div>
+
+<div class="container">
+<div class="row">
+<div *ngFor="let favourite of favourites; let key=index" class="col-sm-3 mb-3">
+    <div class="card" >
+        <img class="card-img-top" src="https://loremflickr.com/320/240/{{favourite.description}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{favourite.brandOwner}}</h5>
+          <h5 class="card-title">{{favourite.description}}</h5>
+          <div class="exp-panel">
+            <mat-expansion-panel style="margin-bottom: 10px;" (open)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                        View Ingredients
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{favourite.ingredients}}</p>
+            </mat-expansion-panel>
+            
+            
+        </div>
+        <h5 class="card-title">Score : {{favourite.score}}</h5>
+        <div style="display: flex; justify-content: space-between;">
+            <button class="btn btn-sm" data-toggle="modal" [attr.data-target]="'#exampleModalCenter'+key">View Nutrients</button>
+            <button id = "favourite+{{key}}" class="delete" routerLink="/home/view" mat-icon-button (click)="deleteFavourite(key)">
+
+                <mat-icon
+                  aria-label="Example icon-button with a delete icon">
+                  delete
+                </mat-icon>
+              
+
+              </button>
+      </div>
+      <div class="modal fade" id="exampleModalCenter{{key}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="exampleModalLongTitle">Nutrients</h1>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                
+              <div *ngFor="let nutrient of favourite.foodNutrients">
+                  <h3> {{nutrient.nutrientName}} {{nutrient.value}} {{nutrient.unitName}}</h3>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+</div>
+</div>
+
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+    <p style="color: white">Please wait. </p>
+</ngx-spinner>

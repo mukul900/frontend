@@ -1,0 +1,12 @@
+.example-spacer {
+    flex: 1 1 auto;
+  
+  }
+
+  mat-toolbar{
+    background: rgba(0, 77, 77, .9);
+  }
+
+  button:focus{
+    outline: none;
+  }

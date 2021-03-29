@@ -1,0 +1,50 @@
+.form-outline{
+    display: flex;
+}
+
+.input-group{
+   width:700px;
+    margin: 50px auto;
+    justify-content: center;
+}
+
+.form-control{
+    width:400px;
+}
+
+.card-header {
+    flex: 1 1 auto;
+    background: rgba(0, 77, 77, .9);
+  }
+
+ .btn{
+    background: rgba(0, 77, 77, .9); 
+outline: none;
+border: none;
+color: white;
+ }
+
+ .card-columns{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+ .exp-panel{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+ .heart{
+     color: red;
+ }
+
+ button:focus{
+     outline:none;
+ }
+
+ .swiper-wrapper{
+     height:200px;
+ }
+
+ .swiper-wrapper img{
+     width: 90%;
+     margin: 0 5%;
+ }
