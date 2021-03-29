@@ -1,10 +1,11 @@
+
 <div class="input-group">
-    
+    <h1 class="welcome-message">WELCOME, {{welcomeMessage}}</h1>
     <div class="form-outline">
         <input id="search-focus" type="search" id="form1" class="form-control" [formControl]="food"
             placeholder="Search Food" />
 
-        <button type="button" (click)="searchFood()" class="btn btn-primary">
+        <button type="button" (click)="searchFood('')" class="btn btn-primary">
             Search
         </button>
     </div>
@@ -13,19 +14,56 @@
 
 <div class="swiper-container">
   <div class="swiper-wrapper ">
-    <div class="swiper-slide ">
-       <img src="https://i.pinimg.com/564x/f0/b6/15/f0b615f78dd809d68ec389f4bc8d94bb.jpg" class="d-block " alt="...">
-      </div>
-    <div class="swiper-slide "><img src="https://i.pinimg.com/564x/f0/b6/15/f0b615f78dd809d68ec389f4bc8d94bb.jpg" class="d-block" alt="..."></div>
-    <div class="swiper-slide"><img src="https://i.pinimg.com/564x/f0/b6/15/f0b615f78dd809d68ec389f4bc8d94bb.jpg" class="d-block w-90" alt="..."></div>
-    <div class="swiper-slide"><img src="https://i.pinimg.com/564x/f0/b6/15/f0b615f78dd809d68ec389f4bc8d94bb.jpg" class="d-block " alt="..."></div>
-    <div class="swiper-slide"><img src="https://i.pinimg.com/564x/f0/b6/15/f0b615f78dd809d68ec389f4bc8d94bb.jpg" class="d-block " alt="..."></div>
-    <div class="swiper-slide"><img src="https://i.pinimg.com/564x/f0/b6/15/f0b615f78dd809d68ec389f4bc8d94bb.jpg" class="d-block " alt="..."></div>
-    <div class="swiper-slide"><img src="https://i.pinimg.com/564x/f0/b6/15/f0b615f78dd809d68ec389f4bc8d94bb.jpg" class="d-block " alt="..."></div>
-    <div class="swiper-slide"><img src="https://i.pinimg.com/564x/f0/b6/15/f0b615f78dd809d68ec389f4bc8d94bb.jpg" class="d-block " alt="..."></div>
-    <div class="swiper-slide"><img src="https://i.pinimg.com/564x/f0/b6/15/f0b615f78dd809d68ec389f4bc8d94bb.jpg" class="d-block " alt="..."></div>
-    <div class="swiper-slide"><img src="https://i.pinimg.com/564x/f0/b6/15/f0b615f78dd809d68ec389f4bc8d94bb.jpg" class="d-block " alt="..."></div>
+    <div class="swiper-slide"><img (click)="searchFood('cheese')" src="https://images-prod.healthline.com/hlcmsresource/images/AN_images/healthiest-cheese-1296x728-swiss.jpg" class="d-block" alt="...">
+
+      <div class="centered">CHEESE</div>
+   
   </div>
+    <div class="swiper-slide"><img src="https://freedesignfile.com/upload/2017/06/Crisp-and-delicious-fried-chicken-HD-picture.jpg" class="d-block" alt="...">
+
+        <div class="centered">CHICKEN</div>
+     
+    </div>
+    <div class="swiper-slide"><img src="https://freedesignfile.com/upload/2017/01/vegetable-salad-HD-picture.jpg" class="d-block" alt="...">
+
+      <div class="centered">SALADS</div>
+   
+  </div>    
+  <div class="swiper-slide"><img src="https://wallpaperaccess.com/full/1455616.jpg" class="d-block" alt="...">
+
+    <div class="centered">COCONUT</div>
+ 
+</div>  
+<div class="swiper-slide"><img src="https://wallpaperaccess.com/full/1751309.jpg" class="d-block" alt="...">
+
+    <div class="centered">MILK</div>
+ 
+</div>    
+<div class="swiper-slide"><img src="https://wallpaperaccess.com/full/5393821.jpg" class="d-block" alt="...">
+
+  <div class="centered">FISH</div>
+
+</div>
+<div class="swiper-slide"><img src="https://wallpapercave.com/wp/wp1929358.jpg" class="d-block" alt="...">
+
+  <div class="centered">BURGERS</div>
+
+</div>    
+<div class="swiper-slide"><img src="https://i.pinimg.com/564x/f0/b6/15/f0b615f78dd809d68ec389f4bc8d94bb.jpg" class="d-block" alt="...">
+
+  <div class="centered">VEGGIES</div>
+
+</div>
+<div class="swiper-slide"><img src="https://img3.exportersindia.com/product_images/bc-full/2018/12/5973008/fresh-paneer-1544158109-4540938.jpeg" class="d-block" alt="...">
+
+  <div class="centered">PANEER</div>
+
+</div>    
+<div class="swiper-slide"><img src="https://www.heart.org/-/media/images/news/2019/february-2019/0212chocolate_sc.png" class="d-block" alt="...">
+
+  <div class="centered">CHOCOLATE</div>
+
+</div>  </div>
   <!-- Add Arrows -->
   <div class="swiper-button-next"></div>
   <div class="swiper-button-prev"></div>

@@ -4,7 +4,7 @@
 
 .input-group{
    width:700px;
-    margin: 50px auto;
+    margin: 10px auto 50px auto;
     justify-content: center;
 }
 
@@ -41,10 +41,43 @@ color: white;
  }
 
  .swiper-wrapper{
-     height:200px;
+     height:185px;
+     margin-bottom: 15px;
  }
 
  .swiper-wrapper img{
      width: 90%;
      margin: 0 5%;
+     height: 100%;
  }
+
+
+ .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+    font-family: monospace;
+  }
+
+  .swiper-slide {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+  }
+
+ .welcome-message {
+    color: rgba(0, 77, 77, .9);
+    animation-name: example;
+    animation-duration: 15s;
+    animation-direction:normal;
+    font-family: monospace;
+ }
+  @keyframes example {
+    0%   {color: rgba(0, 77, 77, .9);}
+    25%  {color:  cadetblue}
+    50%  {color:   aquamarine;}
+    100% {color: green;}
+  }

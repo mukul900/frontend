@@ -135,7 +135,8 @@
 .login-space .group .button {
     width: 100%;
     color: #fff;
-    display: block
+    display: block;
+    outline:none;
 }
 
 .login-space .group .input,

@@ -12,6 +12,14 @@ export class HeaderComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem("bearerToken")!==null)
+    {
+      this.loginStatus="logout"
+    }
+    else
+    {
+      this.loginStatus="login";
+    }
   }
 
   routeToFavourites(){
@@ -21,24 +29,28 @@ export class HeaderComponent implements OnInit {
     else
     {
       alert(`You should login first`);
-      this.router.navigate(['/home']);
     }
   }
   onClick(){
     if(this.loginStatus=="logout")
     {
-    this.loginStatus="login"
+      alert("Successfully logged out");
+      localStorage.removeItem("username");
+      localStorage.removeItem("bearerToken");
+      this.router.navigate(['/auth/login']);
+      this.loginStatus="login"
     }else
     {
-      this.loginStatus="logout"
-    }
-    localStorage.removeItem("username");
-    localStorage.removeItem("bearerToken");
-    alert("Successfully logged out");
-   this.router.navigate(['/auth/login']);
+      this.router.navigate(['/auth/login']);
+    } 
+    
   }
 
   profileClick(){
-    this.router.navigate(['/home/list']);
+    let profileAvail=localStorage.getItem("username");
+    if(profileAvail!==null)
+      this.router.navigate(['/home/list']);
+    else
+      alert(`You should login first`)
   }
 }

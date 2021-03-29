@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FoodListComponent implements OnInit {
 
-  constructor() { }
+  userDetails:any;
+  constructor(private httpClient:HttpClient) { }
 
   ngOnInit(): void {
+    let userId=localStorage.getItem("username");
+    let token=localStorage.getItem("bearerToken");
+    this.httpClient.get("http://localhost:9001/api/v1/user/"+userId,
+    {headers:new HttpHeaders().set("authorization",`Bearer ${token}`)})
+    .subscribe(response=>{
+     // this.userDetails.email=response
+      this.userDetails=response;
+      console.log(response);
+    },
+    error=>{
+      console.log(error.message);
+    })
   }
 
 }

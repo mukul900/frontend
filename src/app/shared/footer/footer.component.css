@@ -2,6 +2,7 @@ mat-toolbar {
    
     justify-content: center;
     background:rgba(0, 77, 77, .9);
+    text-align: center;
 }
 
 /* @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');

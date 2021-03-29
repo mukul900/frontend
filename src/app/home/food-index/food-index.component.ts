@@ -21,6 +21,7 @@ export class FoodIndexComponent implements OnInit {
   //   number:"",
   //   unit:""
   // }
+  welcomeMessage:string="Anonymous";
   Results:string="Recommended Foods";
   food=new FormControl();
   constructor(private httpClient:HttpClient,private spinner:NgxSpinnerService) { }
@@ -34,6 +35,9 @@ export class FoodIndexComponent implements OnInit {
   
   ngOnInit(): void {
 
+    let userWelcome=localStorage.getItem("username");
+    if(userWelcome!==null)
+       this.welcomeMessage=userWelcome;
     this.spinner.show();
     var swiper = new Swiper('.swiper-container', {
       navigation: {
@@ -41,7 +45,10 @@ export class FoodIndexComponent implements OnInit {
         prevEl: '.swiper-button-prev',
       },
       slidesPerView: 4,
-      loop:true
+      loop:true,
+      autoplay: {
+        delay: 2000,
+      }
     });
     console.log(this.food.value);
     const headers={
@@ -64,14 +71,21 @@ export class FoodIndexComponent implements OnInit {
     
   }
 
-  searchFood()
+  searchFood(foodValue:any)
   {
+    console.log(foodValue,"SSS")
     this.spinner.show();
     this.Results="Search Results";
     console.log(this.food.value);
+    let foodName = "";
+    if(foodValue !== ''){
+      foodName = foodValue
+    }else{
+      foodName = this.food.value
+    }
     const headers={
       "api_key":"Lcis769TnWTUYdMtkVoOeiYYUbwuZoeahPmQ7I2F",
-      "query":this.food.value
+      "query":foodName
     }
     this.httpClient.get<any>("https://api.nal.usda.gov/fdc/v1/foods/search",{params:headers})
     .subscribe(data=>{
